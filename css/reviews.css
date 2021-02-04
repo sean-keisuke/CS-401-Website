@@ -1,0 +1,25 @@
+#review-page .single-review-info{
+    width: 400px;
+    height: 250px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 28px;
+    margin: 20px;
+}
+
+#review-page .single-review-info p,
+#review-page .single-review-info h3 {
+    text-align: center;
+}
+
+#review-page .single-review-info img{
+    margin: auto;
+    object-fit: cover;
+    height: 100px;
+    display: block;
+    width: 75%;
+}
+
+#review-page .reviews-container{
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,58 @@
+#navigation {
+  width: 100%;
+}
+
+#navigation .page-nav-bar {
+  background: black;
+}
+
+#navigation .nav-bar-contents {
+  display: flex;
+  max-width: 1240px;
+  margin: auto 40px auto auto;
+  height: 90px;
+}
+
+#navigation .nav-bar-contents a {
+  text-decoration: none;
+  border-radius: 3px;
+  background: transparent;
+  height: 35%;
+  margin: auto 20px;
+}
+
+#navigation .nav-bar-contents a:hover {
+  background: #ddd;
+}
+
+#navigation .nav-bar-contents .link-text:hover {
+  color: black;
+}
+
+#navigation .home-logo {
+  margin-left: 50px;
+  padding: 10px;
+}
+
+#navigation .page-nav-bar .link-text {
+  padding: 10px;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 0;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  font-size: 16px;
+  font-family: helvetica;
+  text-align: center;
+}
+
+#navigation .page-nav-bar{
+  display: flex;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#navigation .logo img {
+  width: 100px;
+  height: 100px;
+}

@@ -1,0 +1,45 @@
+.slideshow-container img {
+  width: 790px;
+  margin-left: auto;
+  height: 588px;
+  margin-right: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.mySlides {
+  display: none;
+  width: 82%;
+  margin: auto;
+  height: 70%;
+  display: block;
+}
+
+.about-us-images{
+  margin-top: 60px;
+}
+
+.slideshow-container .hide {
+  display: none;
+}
+
+.mySlides:hover > .hide,
+.hide:hover {
+  display: block;
+  color: #ddd;
+  position: relative;
+  text-align: center;
+  bottom: 294px;
+  transition: display 0.3s;
+}
+
+.mySlides:hover > img {
+  filter: brightness(45%);
+  transition: filter 0.3s;
+}
+
+.slideshow-label {
+  position: relative;
+  left: 90px;
+  font-style: italic;
+}

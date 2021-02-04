@@ -1,0 +1,49 @@
+.shop-info-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-shop-info {
+  width: 352px;
+  height: 250px;
+  background: #fcfcfc;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 28px;
+  margin: 20px auto;
+}
+
+.single-shop-info a {
+  text-decoration: none;
+  color: black;
+}
+
+.single-shop-info p,
+.single-shop-info h3 {
+  text-align: center;
+}
+
+.shop-content {
+  width: 90%;
+  margin: auto;
+  padding: 20px;
+}
+
+.SW_logo {
+  width: 309px;
+  height: 74px;
+  padding: 3px;
+}
+
+.site-review img {
+  margin: auto;
+  display: block;
+  object-fit: cover;
+  width: 600px;
+  height: 50px;
+}
+
+.store-logo {
+  width: 309px;
+  height: 74px;
+  padding: 3px;
+}

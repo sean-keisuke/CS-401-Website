@@ -1,0 +1,40 @@
+h1 {
+  text-align: center;
+}
+
+.logout-container {
+  width: 50%;
+  margin: auto;
+  background: #fcfcfc;
+  box-shadow: 0px 4px 12px rgb(0 0 0 / 20%);
+  border-radius: 28px;
+  padding: 30px;
+}
+
+.no-signout-container {
+    width: 31%;
+    margin: auto;
+    padding: 20px;
+}
+
+.logout-submit-container {
+  width: 262px;
+  margin: auto;
+}
+
+.logout-submit-container input {
+  width: 261px;
+  height: 42px;
+  left: 264px;
+  top: 685px;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background: #0053a4;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #ffffff;
+}
