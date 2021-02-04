@@ -70,7 +70,7 @@ usort($shop_response, 'sort_shops_by_prices');
     <div id="content">
         <div id="review-subpage">
             <div class="background">
-                <h1> <?php $singleReviewTitle ?> </h1>
+                <h1> <?php echo $singleReviewTitle ?> </h1>
                 <div class="reviews-container">
                     <div class="site-review">
                         <img src="//s3.amazonaws.com/images.static.steveweissmusic.com/products/images/uploads/1108889_30386_large.jpg" srcset="//s3.amazonaws.com/images.static.steveweissmusic.com/products/images/uploads/1108889_30386_thumb.jpg 155w,
@@ -79,7 +79,7 @@ usort($shop_response, 'sort_shops_by_prices');
                         96vw" width="315" height="315" alt="innovative field series fspr2 paul rennick marching snare drumsticks">
                         <div class="site-review-text">
                             <p>
-                                <?php $singleReviewContent ?>
+                                <?php echo $singleReviewContent ?>
                             </p>
                         </div>
                     </div>
