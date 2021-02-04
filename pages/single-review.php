@@ -21,17 +21,17 @@ $singleReviewContent = "SAMPLE REVIEW OF THE DRUMSTICK. IT'S PRETTY ALRIGHT! (ge
 
 $shop_response = array();
 
-$steveweissSlug = 'innovative-paul-rennick-fspr2';
-$steve_weiss_response = getSWProduct($steveweissSlug);
-if ($steve_weiss_response) {
-    array_push($shop_response, $steve_weiss_response);
-}
+// $steveweissSlug = 'innovative-paul-rennick-fspr2';
+// $steve_weiss_response = getSWProduct($steveweissSlug);
+// if ($steve_weiss_response) {
+//     array_push($shop_response, $steve_weiss_response);
+// }
 
-$lonestarSlug = 'Sticks-Mallets/Marching-Snare-Drum-Sticks/Innovative-Percussion-FSPR2';
-$lonestar_response = getLSProduct($lonestarSlug);
-if ($steve_weiss_response) {
-    array_push($shop_response, $lonestar_response);
-}
+// $lonestarSlug = 'Sticks-Mallets/Marching-Snare-Drum-Sticks/Innovative-Percussion-FSPR2';
+// $lonestar_response = getLSProduct($lonestarSlug);
+// if ($steve_weiss_response) {
+//     array_push($shop_response, $lonestar_response);
+// }
 
 // $amazonSlug = 'Innovative-Percussion-Drumstick-inch-FSPR2/dp/B001LG9Y04/ref=sr_1_2?crid=AXJ9GUSINWI2&dchild=1&keywords=paul+rennick+snare+sticks&qid=1611166198&sprefix=paul+rennick+%2Caps%2C368&sr=8-2';
 // $amazon_response = getAZProduct($amazonSlug);
@@ -39,11 +39,11 @@ if ($steve_weiss_response) {
 //     array_push($shop_response, $amazon_response);
 // }
 
-$guitarCenterSlug = 'Innovative-Percussion/Paul-Rennick-Signature-Marching-Drumsticks-Hickory-1274228076721.gc';
-$guitar_center_response = getGCProduct($guitarCenterSlug);
-if ($guitar_center_response) {
-    array_push($shop_response, $guitar_center_response);
-}
+// $guitarCenterSlug = 'Innovative-Percussion/Paul-Rennick-Signature-Marching-Drumsticks-Hickory-1274228076721.gc';
+// $guitar_center_response = getGCProduct($guitarCenterSlug);
+// if ($guitar_center_response) {
+//     array_push($shop_response, $guitar_center_response);
+// }
 
 function sort_shops_by_prices($a, $b)
 {
