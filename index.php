@@ -22,7 +22,7 @@ include('./nav.php');
     <div id="content">
       <h1>Marching Percussion Gear Reviews</h1>
       <div class="page-links">
-        <a href="/pages/about.php">ENTER SITE!</a>
+        <a href="/pages/reviews.php">ENTER SITE!</a>
       </div>
     </div>
     <?php require_once "footer.php"; ?>
