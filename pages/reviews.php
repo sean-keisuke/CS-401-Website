@@ -31,7 +31,7 @@ include('../nav.php');
                                 <?php // get this from backend 
                                 ?>
                                 <h3>
-                                    Sample Product:
+                                    Sample Products:
                                 </h3>
                                 <?php // get this from backend 
                                 ?>
