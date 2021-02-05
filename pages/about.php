@@ -1,7 +1,11 @@
-<?php 
-    include('../components/aboutMeImages.php');
-    include('../components/slideshow.php');
-    include('../nav.php');
+<?php
+include('../components/aboutMeImages.php');
+include('../components/slideshow.php');
+include("../components/connection.php");
+include("../components/util.php");
+
+session_start();
+$user_data = check_login($con);
 ?>
 
 
@@ -14,7 +18,7 @@
 </head>
 
 <body>
-    <?php getNav(); ?>
+    <?php require_once "../nav.php"; ?>
     <div id="content">
         <div id="about-page">
             <div class="background">
@@ -52,7 +56,7 @@
                         <label for="slideshow" class="slideshow-label">Click on image to see more</label>
                         <div id="slideshow">
                             <?php
-                                 getAboutMePics();
+                            getAboutMePics();
                             ?>
                         </div>
                     </div>

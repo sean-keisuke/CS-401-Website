@@ -1,37 +1,41 @@
 <?php
-include('../nav.php');
+include("../components/connection.php");
+include("../components/util.php");
 
-$host = "localhost";
-$user = "root";
-$password = "fj2euo34fg8ws";
-$db = "pgr";
+session_start();
 
-$mysqli = new mysqli($host, $user, $password, $db);
-// Check connection
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-    exit();
-}
-
-$userPost = $_POST['username'];
-
-if(isset($_POST['username'])){
-
-    $uname = $_POST['username'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    //something was posted
+    $user_name = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "select * from loginform where username='" . $uname . "'AND password='" . $password . "' limit 1";
 
-    $result = $mysqli->query($sql);
+    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
 
-    if ($result->num_rows == 1) {
-        echo " You Have Successfully Logged in";
-        exit();
+        //read from database
+        $query = "select * from users where user_name = '$user_name' limit 1";
+        $result = mysqli_query($con, $query);
+
+        if ($result) {
+            if ($result && mysqli_num_rows($result) > 0) {
+
+                $user_data = mysqli_fetch_assoc($result);
+
+                if ($user_data['password'] === $password) {
+
+                    $_SESSION['user_id'] = $user_data['user_id'];
+                    header("Location: reviews.php");
+                    die;
+                }
+            }
+        }
+
+        echo "wrong username or password!";
     } else {
-        echo " You Have Entered Incorrect Password";
-        exit();
+        echo "wrong username or password!";
     }
 }
+
 ?>
 
 
@@ -44,12 +48,12 @@ if(isset($_POST['username'])){
 </head>
 
 <body>
-    <?php getNav(); ?>
+    <?php require_once "../nav.php"; ?>
     <div id="content">
         <div id="login-page">
             <div class="background">
                 <div class="login-container">
-                    <h1>Sign In! </h1>
+                    <h1>Sign In To Enter Website! </h1>
                     <form method="POST" action="#">
                         <div class="login-fields-container">
                             <label for="username" class="username-label">Username</label>

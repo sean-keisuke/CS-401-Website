@@ -1,9 +1,13 @@
 <?php
-include('../nav.php');
 include('../components/getSWProduct.php');
 include('../components/getLSProduct.php');
 include('../components/getAZProduct.php');
 include('../components/getGCProduct.php');
+
+include("../components/connection.php");
+include("../components/util.php");
+session_start();
+$user_data = check_login($con);
 
 class Product
 {
@@ -66,7 +70,7 @@ usort($shop_response, 'sort_shops_by_prices');
 </head>
 
 <body>
-    <?php getNav(); ?>
+    <?php require_once "../nav.php"; ?>
     <div id="content">
         <div id="review-subpage">
             <div class="background">

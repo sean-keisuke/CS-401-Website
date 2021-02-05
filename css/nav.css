@@ -56,3 +56,11 @@
   width: 100px;
   height: 100px;
 }
+
+#navigation .current-user{
+  color: white;
+  margin: auto;
+  font-weight: bold;
+  font-size: 18px;
+  font-family: helvetica;
+}

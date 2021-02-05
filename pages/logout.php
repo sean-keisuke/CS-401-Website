@@ -1,5 +1,15 @@
 <?php
-include('../nav.php');
+include("../components/connection.php");
+include("../components/util.php");
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_SESSION['user_id'])) {
+        unset($_SESSION['user_id']);
+    }
+    header("Location: login.php");
+    die;
+}
 ?>
 
 
@@ -12,18 +22,20 @@ include('../nav.php');
 </head>
 
 <body>
-    <?php getNav(); ?>
+    <?php require_once "../nav.php"; ?>
     <div id="content">
         <div id="logout-page">
             <div class="background">
                 <div class="logout-container">
                     <h1>Sign Out!</h1>
-                    <div class="logout-submit-container">
-                        <input type="submit" class="logout-button" value="LOG OUT" />
-                    </div>
-                    <div class="no-signout-container">
-                        <a href="/pages/reviews.php">I don't want to sign out</a>
-                    </div>
+                    <form method="POST" action="#">
+                        <div class="logout-submit-container">
+                            <input type="submit" class="logout-button" value="LOG OUT" />
+                        </div>
+                        <div class="no-signout-container">
+                            <a href="/pages/reviews.php">I don't want to sign out</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

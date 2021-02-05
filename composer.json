@@ -1,6 +1,7 @@
 {
     "require": {
         "guzzlehttp/guzzle": "^7.0",
-        "fabpot/goutte": "^4.0"
+        "fabpot/goutte": "^4.0",
+        "vlucas/phpdotenv": "^5.3"
     }
 }

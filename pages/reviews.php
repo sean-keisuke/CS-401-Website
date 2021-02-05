@@ -1,5 +1,8 @@
 <?php
-include('../nav.php');
+include("../components/connection.php");
+include("../components/util.php");
+session_start();
+$user_data = check_login($con);
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +14,7 @@ include('../nav.php');
 </head>
 
 <body>
-    <?php getNav(); ?>
+   <?php require_once "../nav.php"; ?>
     <div id="content">
         <div id="review-page">
             <div class="background">
