@@ -4,8 +4,6 @@ include("./components/util.php");
 
 session_start();
 
-// $is_logged_in = false;
-$is_logged_in = nav_bar_login();
 ?>
 
 <!DOCTYPE html>
@@ -32,7 +30,7 @@ $is_logged_in = nav_bar_login();
                     Reviews
                 </div>
             </a>
-            <?php if ($is_logged_in) :
+            <?php if (isset($_SESSION['user_id'])) :
                 $user_data = check_login($con);
             ?>
 

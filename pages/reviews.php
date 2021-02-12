@@ -1,8 +1,13 @@
 <?php
 include("../components/connection.php");
 include("../components/util.php");
+include("../components/getComments.php");
 session_start();
 $user_data = check_login($con);
+$page_id = 3;
+$comments = getCommentSection($con, $page_id);
+$page_name = "reviews";
+
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +19,7 @@ $user_data = check_login($con);
 </head>
 
 <body>
-   <?php require_once "../nav.php"; ?>
+    <?php require_once "../nav.php"; ?>
     <div id="content">
         <div id="review-page">
             <div class="background">
@@ -54,6 +59,7 @@ $user_data = check_login($con);
                     }
                     ?>
                 </div>
+                <?php require_once "../components/comments.php"; ?>
             </div>
         </div>
     </div>

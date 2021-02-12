@@ -3,9 +3,13 @@ include('../components/aboutMeImages.php');
 include('../components/slideshow.php');
 include("../components/connection.php");
 include("../components/util.php");
+include("../components/getComments.php");
 
 session_start();
 $user_data = check_login($con);
+$page_id = 2;
+$comments = getCommentSection($con, $page_id);
+$page_name = "about";
 ?>
 
 
