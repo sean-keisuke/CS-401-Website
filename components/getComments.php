@@ -12,3 +12,12 @@ function getCommentSection($con, $pageID)
         }
     }
 }
+
+function deleteComment($con, $id)
+{
+    $deleteQuery = "delete from comments where  CommentID = $id";
+    $result = mysqli_query($con, $deleteQuery);
+    if ($result) {
+        echo "comment deleted";
+    }
+}

@@ -19,6 +19,7 @@ $page_name = "about";
 <head>
     <link rel="stylesheet" type="text/css" href="/css/PGR.css">
     <link rel="stylesheet" type="text/css" href="/css/about.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>

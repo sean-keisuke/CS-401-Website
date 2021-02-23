@@ -68,6 +68,7 @@ usort($shop_response, 'sort_shops_by_prices');
 <head>
     <link rel="stylesheet" type="text/css" href="/css/PGR.css">
     <link rel="stylesheet" type="text/css" href="/css/reviewSubpages.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>

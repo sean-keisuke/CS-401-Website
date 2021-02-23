@@ -19,6 +19,7 @@ $page_name = "reviews";
 <head>
     <link rel="stylesheet" type="text/css" href="/css/PGR.css">
     <link rel="stylesheet" type="text/css" href="/css/reviews.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>

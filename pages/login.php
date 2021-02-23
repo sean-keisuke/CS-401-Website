@@ -46,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <link rel="stylesheet" type="text/css" href="/css/PGR.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>

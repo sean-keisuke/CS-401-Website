@@ -16,7 +16,7 @@ session_start();
     <div class="page-nav-bar">
         <a href="/" class="home-logo">
             <div class="logo">
-                <img src="/images/placeholder.png" alt="placeholder-logo">
+                <img src="/images/PGR-logo.png" alt="logo">
             </div>
         </a>
         <div class="nav-bar-contents">

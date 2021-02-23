@@ -7,6 +7,7 @@ $pageID = 1;
 <head>
   <link rel="stylesheet" type="text/css" href="/css/PGR.css">
   <link rel="stylesheet" type="text/css" href="/css/index.css">
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
 </head>
 
 <body>
@@ -17,7 +18,7 @@ $pageID = 1;
       </video>
     </div>
     <div class="logo">
-      <img src="/images/placeholder.png" alt="placeholder-logo">
+      <img src="/images/PGR-logo.png" alt="logo">
     </div>
     <div id="content">
       <h1>Marching Percussion Gear Reviews</h1>
