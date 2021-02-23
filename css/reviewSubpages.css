@@ -47,6 +47,9 @@
   height: 74px;
   padding: 3px;
 }
+
 .site-review-text {
-  text-align: center;
+  margin: 30px auto;
+  width: 80%;
+  font-size: 20px;
 }

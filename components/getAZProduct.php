@@ -1,23 +1,25 @@
 <?php
 require '../vendor/autoload.php';
 
-use Goutte\Client;
-use GuzzleHttp\Client as GuzzleClient;
-
-function getAZProduct($slug)
+function getAZProduct($con, $productID)
 {
-    $url = 'https://www.amazon.com/' . $slug;
     $product = new Product;
-    $product->productURL = $url;
+    //read from database
+    $query = "select * from amazonproduct where productID = $productID limit 1";
+    $result = mysqli_query($con, $query);
 
-    $client = new Client();
+    if ($result) {
+        if ($result && mysqli_num_rows($result) > 0) {
+            $json = mysqli_fetch_assoc($result);
 
-    $crawler = $client->request('GET', $url);
-    $product->productName = $crawler->filter('#productTitle')->text();
-    $product->productPrice = $crawler->filter('#priceblock_ourprice')->text();
-    $product->productStarReview = $crawler->filter('.a-icon-alt')->text();
-    $product->storeName = "Amazon";
-    $product->logoURL = ' /images/amazonLogo.png';
-    $product->logoAlt = "Amazon-Logo";
-    return $product;
+            $product->productURL = $json["productURL"];
+            $product->productName = $json["productTitle"];
+            $product->productPrice = $json["productPrice"];
+            $product->productStarReview = $json["productReview"];
+            $product->storeName = "Amazon";
+            $product->logoURL = ' /images/amazonLogo.png';
+            $product->logoAlt = "Amazon-Logo";
+            return $product;
+        }
+    }
 }

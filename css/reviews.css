@@ -1,4 +1,4 @@
-#review-page .single-review-info{
+#review-page .review-subpage-info{
     width: 400px;
     height: 250px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
@@ -6,12 +6,12 @@
     margin: 20px;
 }
 
-#review-page .single-review-info p,
-#review-page .single-review-info h3 {
+#review-page .review-subpage-info p,
+#review-page .review-subpage-info h3 {
     text-align: center;
 }
 
-#review-page .single-review-info img{
+#review-page .review-subpage-info img{
     margin: auto;
     object-fit: cover;
     height: 100px;

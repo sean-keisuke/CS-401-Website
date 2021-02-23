@@ -2,10 +2,13 @@
 include("../components/connection.php");
 include("../components/util.php");
 include("../components/getComments.php");
+include("../components/getReviewPages.php");
+
 session_start();
 $user_data = check_login($con);
 $page_id = 3;
 $comments = getCommentSection($con, $page_id);
+$reviewSubpages = getReviewPages($con);
 $page_name = "reviews";
 
 ?>
@@ -25,39 +28,20 @@ $page_name = "reviews";
             <div class="background">
                 <h1> Find a review of your favorite product today! </h1>
                 <div class="reviews-container">
-                    <?php
-                    for ($i = 0; $i < 6; $i++) { // change later for each product available in backend
+                    <?php foreach ($reviewSubpages as &$subpage) {
                     ?>
-                        <div class="single-review-info">
-                            <a href="/pages/single-review.php">
-                                <?php // get this from backend 
-                                ?>
-                                <img class="store-logo" src="//s3.amazonaws.com/images.static.steveweissmusic.com/products/images/uploads/1108889_30386_large.jpg" srcset="//s3.amazonaws.com/images.static.steveweissmusic.com/products/images/uploads/1108889_30386_thumb.jpg 155w,
-                        //s3.amazonaws.com/images.static.steveweissmusic.com/products/images/uploads/1108889_30386_large.jpg 315w,
-                        //s3.amazonaws.com/images.static.steveweissmusic.com/products/images/uploads/1108889_30386_popup.jpg 575w" sizes="(min-width: 569px) 315px,
-                        96vw" width="315" height="315" alt="innovative field series fspr2 paul rennick marching snare drumsticks">
-                                <?php // get this from backend 
-                                ?>
-                                <h3>
-                                    Sample Products:
+                        <div class="review-subpage-info">
+                            <a href="/pages/reviewSubpage.php?productID=<?php echo $subpage["productID"] ?>">
+                                <img class="store-logo" src=<?php echo $subpage["productImage"]; ?>>
+                                <h3 class="product-name">
+                                    <?php echo $subpage["productTitle"]; ?>
                                 </h3>
-                                <?php // get this from backend 
-                                ?>
-                                <p>
-                                    tag 1
+                                <p class="tags">
+                                    <?php echo $subpage["pageTag"]; ?>
                                 </p>
-                                <?php // get this from backend 
-                                ?>
-                                <p>
-                                    tag 2
-                                </p>
-                                <?php // get this from backend 
-                                ?>
                             </a>
                         </div>
-                    <?php
-                    }
-                    ?>
+                    <?php } ?>
                 </div>
                 <?php require_once "../components/comments.php"; ?>
             </div>

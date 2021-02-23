@@ -1,23 +1,25 @@
 <?php
 require '../vendor/autoload.php';
 
-use Goutte\Client;
-use GuzzleHttp\Client as GuzzleClient;
-
-function getLSProduct($slug)
+function getLSProduct($con, $productID)
 {
-    $url = 'https://www.lonestarpercussion.com/' . $slug;
     $product = new Product;
-    $product->productURL = $url;
+    //read from database
+    $query = "select * from lonestarproduct where productID = $productID limit 1";
+    $result = mysqli_query($con, $query);
 
-    $client = new Client();
+    if ($result) {
+        if ($result && mysqli_num_rows($result) > 0) {
+            $json = mysqli_fetch_assoc($result);
 
-    $crawler = $client->request('GET', $url);
-    $product->productName = $crawler->filter('h1')->text();
-    $product->productPrice = $crawler->filter('.productPrice')->text();
-    $product->productStarReview = $crawler->filter('.reviewAggregateRating')->text();
-    $product->storeName = "Lonestar Percussion";
-    $product->logoURL = ' /images/Lone-Star-Percussion.png';
-    $product->logoAlt = "Lonestar-Percussion-logo";
-    return $product;
+            $product->productURL = $json["productURL"];
+            $product->productName = $json["productTitle"];
+            $product->productPrice = $json["productPrice"];
+            $product->productStarReview = $json["productReview"];
+            $product->storeName = "Lonestar Percussion";
+            $product->logoURL = ' /images/Lone-Star-Percussion.png';
+            $product->logoAlt = "Lonestar-Percussion-logo";
+            return $product;
+        }
+    }
 }

@@ -1,23 +1,25 @@
 <?php
 require '../vendor/autoload.php';
 
-use Goutte\Client;
-use GuzzleHttp\Client as GuzzleClient;
-
-function getGCProduct($slug)
+function getGCProduct($con, $productID)
 {
-    $url = 'https://www.guitarcenter.com/' . $slug;
     $product = new Product;
-    $product->productURL = $url;
+    //read from database
+    $query = "select * from guitarcenterproduct where productID = $productID limit 1";
+    $result = mysqli_query($con, $query);
 
-    $client = new Client();
+    if ($result) {
+        if ($result && mysqli_num_rows($result) > 0) {
+            $json = mysqli_fetch_assoc($result);
 
-    $crawler = $client->request('GET', $url);
-    $product->productName = $crawler->filter('h1')->text();
-    $product->productPrice = $crawler->filter('span.topAlignedPrice')->text();
-    $product->productStarReview = $crawler->filter('span.stars')->text();
-    $product->storeName = "Guitar Center";
-    $product->logoURL = ' /images/Guitar_Center_logo.png';
-    $product->logoAlt = "Guitar-Center-logo";
-    return $product;
+            $product->productURL = $json["productURL"];
+            $product->productName = $json["productTitle"];
+            $product->productPrice = $json["productPrice"];
+            $product->productStarReview = $json["productReview"];
+            $product->storeName = "Guitar Center";
+            $product->logoURL = ' /images/Guitar_Center_logo.png';
+            $product->logoAlt = "Guitar-Center-logo";
+            return $product;
+        }
+    }
 }

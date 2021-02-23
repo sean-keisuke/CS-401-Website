@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $comment_to_post = $_POST['comment'];
     if (!empty($comment_to_post)) {
         $query = "insert into comments ( UserID, CommentContent, TimePosted, pageID) values ( $user_id, '$comment_to_post', '$date', $page_id)";
+        // echo $query;
         mysqli_query($con, $query);
     }
    
