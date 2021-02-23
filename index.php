@@ -17,9 +17,6 @@ $pageID = 1;
         <source src="/images/MileHigh.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="logo">
-      <img src="/images/PGR-logo.png" alt="logo">
-    </div>
     <div id="content">
       <h1>Marching Percussion Gear Reviews</h1>
       <div class="page-links">
