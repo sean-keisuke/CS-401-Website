@@ -28,3 +28,28 @@
     padding-top: 40px;
     font-size: 30px;
 }
+
+#review-page .tags{
+    display: inline-block;
+    padding: 3px 8px;
+    color: #3b3b3b;
+    font-weight: 600;
+    font-family: 'Open Sans','Helvetica Neue','Helvetica','Arial', sans-serif;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #fff000;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+
+#review-page .review-subpage-info a {
+    text-decoration: none;
+    font-family: 'Open Sans Condensed','Arial',sans-serif;
+    color: black;
+}
+
+#review-page .review-subpage-info a:hover {
+    text-decoration: underline;
+}
