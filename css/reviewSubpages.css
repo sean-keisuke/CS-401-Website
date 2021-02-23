@@ -37,9 +37,7 @@
 .site-review img {
   margin: auto;
   display: block;
-  object-fit: cover;
   width: 600px;
-  height: 50px;
 }
 
 .store-logo {

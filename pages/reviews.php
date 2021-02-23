@@ -43,6 +43,7 @@ $page_name = "reviews";
                         </div>
                     <?php } ?>
                 </div>
+                <h3 class="next-review">What should we review next?</h3>
                 <?php require_once "../components/comments.php"; ?>
             </div>
         </div>

@@ -1,9 +1,9 @@
 #review-page .review-subpage-info{
     width: 400px;
-    height: 250px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
     border-radius: 28px;
     margin: 20px;
+    padding: 20px;
 }
 
 #review-page .review-subpage-info p,
@@ -12,9 +12,8 @@
 }
 
 #review-page .review-subpage-info img{
-    margin: auto;
-    object-fit: cover;
-    height: 100px;
+    margin: 20px auto;
+    height: 70%;
     display: block;
     width: 75%;
 }
@@ -22,4 +21,10 @@
 #review-page .reviews-container{
     display: flex;
     flex-wrap: wrap;
+}
+
+#review-page .next-review{
+    text-align: center;
+    padding-top: 40px;
+    font-size: 30px;
 }
