@@ -12,10 +12,14 @@ $page_name = $_GET['page_name'];
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //something was posted
     $comment_to_post = $_POST['comment'];
+    $comment_to_post = htmlspecialchars($comment_to_post);
     if (!empty($comment_to_post)) {
-        $query = "insert into comments ( UserID, CommentContent, TimePosted, pageID) values ( $user_id, '$comment_to_post', '$date', $page_id)";
-        // echo $query;
-        mysqli_query($con, $query);
+        $query = "insert into comments ( UserID, CommentContent, TimePosted, pageID) values ( $user_id, '" . mysqli_real_escape_string($con, $comment_to_post) . "' , '$date', $page_id)";
+        $response = mysqli_query($con, $query);
+        if (!$response) {
+            echo $query;
+            die('Invalid query: ' . mysqli_error($con));
+        }
     }
    
 }
