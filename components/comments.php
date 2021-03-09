@@ -19,6 +19,13 @@
                         <span>User: <?php echo $comment["user_name"] ?></span>
                         <span>Comment: <?php echo $comment["CommentContent"]; ?></span>
                         <span>Time Posted: <?php echo $comment["TimePosted"]; ?></span>
+                        <?php if ($comment["UserID"] === $_SESSION['id']) {
+                            $delete_link = "../components/delete_comment_handler.php?page_name=" . $page_name . "&comment_id=" . $comment["CommentID"] . "&UserID=" . $comment["UserID"];
+                        ?>
+                            <button class="delete-comment-btn">
+                                <a href="<?php echo $delete_link ?>">X</a>
+                            </button>
+                        <?php } ?>
                     </ul>
                 </div>
             <?php } ?>

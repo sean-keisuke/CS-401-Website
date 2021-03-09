@@ -33,3 +33,19 @@
   color: #777777;
   margin: 50px;
 }
+
+.delete-comment-btn a{
+  text-decoration: none;
+    color: red;
+    font-weight: bold;
+}
+
+.delete-comment-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.delete-comment-btn:hover {
+  background-color: #EEEEEE
+}
