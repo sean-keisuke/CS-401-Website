@@ -59,3 +59,18 @@ h1 {
   text-align: center;
   color: #ffffff;
 }
+
+.login-error-message {
+  margin-bottom: 20px;
+}
+
+.login-error-message p{
+  background-color: red;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  width: 70%;
+  margin: auto;
+  border: 2px solid black;
+  border-radius: 7px;
+}

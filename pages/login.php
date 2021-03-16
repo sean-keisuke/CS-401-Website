@@ -9,31 +9,37 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $user_name = $_POST['username'];
     $password = $_POST['password'];
 
-
     if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-
         //read from database
         $query = "select * from users where user_name = '$user_name' limit 1";
         $result = mysqli_query($con, $query);
 
         if ($result) {
             if ($result && mysqli_num_rows($result) > 0) {
-
                 $user_data = mysqli_fetch_assoc($result);
 
                 if ($user_data['password'] === $password) {
 
                     $_SESSION['user_id'] = $user_data['user_id'];
                     $_SESSION['id'] = $user_data['id'];
+                    unset($_SESSION['login_data']);
+                    unset($_SESSION['error_message']);
                     header("Location: reviews.php");
                     die;
                 }
+                else {
+                    $_SESSION['error_message'] = "wrong username or password!";
+                    $_SESSION['login_data'] = $_POST;
+                }
             }
-        }
-
-        echo "wrong username or password!";
+            else {
+                $_SESSION['error_message'] = "user does not exist!";
+                $_SESSION['login_data'] = $_POST;
+            }
+        } 
     } else {
-        echo "wrong username or password!";
+        $_SESSION['error_message'] = "A field is missing!";
+        $_SESSION['login_data'] = $_POST;
     }
 }
 
@@ -46,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <head>
     <link rel="stylesheet" type="text/css" href="/css/PGR.css">
     <link rel="stylesheet" type="text/css" href="/css/login.css">
-    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
 </head>
 
 <body>
@@ -58,10 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <h1>Sign In To Enter Website! </h1>
                     <form method="POST" action="#">
                         <div class="login-fields-container">
+                            <?php if (!isset($_SESSION['user_id'])) { ?>
+                                <div class="login-error-message">
+                                    <p><?php echo $_SESSION['error_message'] ?></p>
+                                </div>
+                            <?php } ?>
                             <label for="username" class="username-label">Username</label>
-                            <input name="username" id="username" placeholder="username..." />
+                            <input name="username" id="username" placeholder="username..." <?php if (isset($_SESSION['login_data']['username'])) { ?>value=<?php echo $_SESSION['login_data']['username'] ?> <?php } ?> />
                             <label for="password" class="password-label">Password</label>
-                            <input type="password" name="password" id="password" />
+                            <input type="password" name="password" id="password" placeholder="password..." />
                             <a href="/pages/create-account.php">Click here to make an Account</a>
                         </div>
                         <div class="login-submit-container">
