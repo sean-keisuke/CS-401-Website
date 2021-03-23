@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                     <h1>Sign In To Enter Website! </h1>
                     <form method="POST" action="#">
                         <div class="login-fields-container">
-                            <?php if (!isset($_SESSION['user_id'])) { ?>
+                            <?php if (isset($_SESSION['error_message']) && !isset($_SESSION['user_id'])) { ?>
                                 <div class="login-error-message">
                                     <p><?php echo $_SESSION['error_message'] ?></p>
                                 </div>
