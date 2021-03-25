@@ -8,6 +8,7 @@ $pageID = 1;
   <link rel="stylesheet" type="text/css" href="/css/PGR.css">
   <link rel="stylesheet" type="text/css" href="/css/index.css">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>

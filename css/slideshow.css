@@ -5,13 +5,15 @@
   margin-right: auto;
   object-fit: cover;
   cursor: pointer;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 25px;
 }
 
 .mySlides {
   display: none;
   width: 82%;
   margin: auto;
-  height: 70%;
+  height: 100%;
   display: block;
 }
 
