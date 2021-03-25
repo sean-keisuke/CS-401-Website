@@ -32,7 +32,6 @@ function getSlideShow($imgArray)
                 var picArray = $(".mySlides");
                 if (n > picArray.length) {
                     slideIndex = 1 // reset back to the first slide
-                    console.log(slideIndex)
                 }
                 if (n < 1) {
                     slideIndex = picArray.length
