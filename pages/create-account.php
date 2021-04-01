@@ -9,12 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $user_name = $_POST['username'];
     $password = $_POST['password'];
     $confirm_pass = $_POST['password-confirm'];
+    $hashed_password = hash('sha256', $password);
 
     if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
         if ($password == $confirm_pass) {
             //save to database
             $user_id = random_num(20);
-            $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+            $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$hashed_password')";
 
             mysqli_query($con, $query);
 
