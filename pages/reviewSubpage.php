@@ -100,7 +100,7 @@ usort($shop_response, 'sort_shops_by_prices');
                                             <?php echo $store_res->storeName ?>:
                                         </h3>
                                         <p>
-                                            Price: <?php echo $store_res->productPrice ?>
+                                            Price: $<?php echo $store_res->productPrice ?>
                                         </p>
                                         <p>
                                             Current Rating: <?php echo substr($store_res->productStarReview, 0, 3) ?> Stars

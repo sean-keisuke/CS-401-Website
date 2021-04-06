@@ -34,7 +34,7 @@
   margin: 50px;
 }
 
-.delete-comment-btn a{
+.delete-comment-btn{
   text-decoration: none;
     color: red;
     font-weight: bold;
